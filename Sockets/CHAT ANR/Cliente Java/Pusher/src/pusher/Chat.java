@@ -260,55 +260,56 @@ public class Chat extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/1.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/1.png' width='40' height='40'>" ,"true");
+                                              
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/2.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/2.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/3.png' width='40' height='40'>" ,"true");        // TODO add your handling code here:
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/3.png' width='40' height='40'>" ,"true");        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/4.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/4.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/5.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/5.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/6.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/6.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/7.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/7.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/8.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/8.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/9.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/9.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/10.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/10.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/11.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/11.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/12.png' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/12.png' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        pusher.enviaMensaje(usuario,"<img src='http://demos.netosolis.com/newchat/img/13.gif' width='40' height='40'>" ,"true");
+        pusher.enviaMensaje(usuario,"<img src='http://taimach.munijuanespinozamedrano.gob.pe/img/13.gif' width='40' height='40'>" ,"true");
     }//GEN-LAST:event_jButton14ActionPerformed
 
     /**
