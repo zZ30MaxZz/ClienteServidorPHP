@@ -1,5 +1,6 @@
 package pusher;
 
+import pusher.Chat;
 import javax.swing.JOptionPane;
 
 /**
@@ -9,10 +10,15 @@ import javax.swing.JOptionPane;
 public class Chat extends javax.swing.JFrame {
     private int opc=0;
     private Pusher pusher;
+    public String canal;
+    public String evento;
     private String usuario = "";
     public Chat() {
         while(usuario == null || usuario.trim().length()==0){
             usuario = JOptionPane.showInputDialog(this, "Escribe tu nombre:");
+            canal = JOptionPane.showInputDialog(this, "canal");
+            evento = JOptionPane.showInputDialog(this, "evento");
+            
         }
         initComponents();
         pusher = new Pusher(jEditorPane1);

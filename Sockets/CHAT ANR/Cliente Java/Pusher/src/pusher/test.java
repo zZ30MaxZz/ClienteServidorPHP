@@ -22,25 +22,26 @@ import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLEditorKit;
 
-public class Pusher implements ChannelEventListener, ConnectionEventListener{
+public class test implements ChannelEventListener, ConnectionEventListener{
     
+    public String canalSelecionado="" ;
     private final String app_key = "62bdb1641a627e57b225";
-    private final String canal = "chat";
-    private final String evento = "mensaje";
+    private final String canal = "cha";
+    private final String evento = "mensaj";
     private final String host = "http://taimach.munijuanespinozamedrano.gob.pe/server.php";
     
-    private final com.pusher.client.Pusher pusher;
+    private final com.pusher.client.Pusher aki;
     private final long startTime = System.currentTimeMillis();
     private String mensajes = "";
     private JEditorPane panel;
     
     
-    public Pusher(JEditorPane p,String canal,String evento){
+    public test(JEditorPane p,String canal,String evento){
         panel = p;
         PusherOptions options = new PusherOptions().setEncrypted(true);
-        pusher = new com.pusher.client.Pusher(app_key, options);
-        pusher.connect(this);
-        pusher.subscribe(canal, this,evento );
+        aki = new com.pusher.client.Pusher(app_key, options);
+        aki.connect(this);
+        aki.subscribe(canal, this,evento );
     }
     
     @Override
@@ -95,15 +96,13 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
     }
      
     //Funcion para enviar un mensaje al servidor
-    public void enviaMensaje(String usuario, String mensaje, String emoticone ,String canal, String evento){
+    public void enviaMensaje(String usuario, String mensaje, String emoticone){
         try{
             
             String params =
                     "usuario=" + URLEncoder.encode(usuario, "UTF-8") +
                     "&mensaje=" + URLEncoder.encode(mensaje, "UTF-8") +
-                    "&emoticone=" + URLEncoder.encode(emoticone, "UTF-8")+
-                    "&canal=" + URLEncoder.encode(canal, "UTF-8") +
-                    "&evento=" + URLEncoder.encode(evento, "UTF-8");
+                    "&emoticone=" + URLEncoder.encode(emoticone, "UTF-8");
             
             String res = Pusher.excutePost(host, params);
         }catch(Exception e){
@@ -120,16 +119,16 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
   {
     URL url;
     HttpURLConnection connection = null;  
+     PusherOptions options = new PusherOptions().setEncrypted(true);
+    
     try {
       //Crear la conexion
       url = new URL(targetURL);
       connection = (HttpURLConnection)url.openConnection();
       connection.setRequestMethod("POST");
-      connection.setRequestProperty("Content-Type", 
-           "application/x-www-form-urlencoded");
+      connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 			
-      connection.setRequestProperty("Content-Length", "" + 
-               Integer.toString(urlParameters.getBytes().length));
+      connection.setRequestProperty("Content-Length", "" + Integer.toString(urlParameters.getBytes().length));
       connection.setRequestProperty("Content-Language", "en-US");  
 			
       connection.setUseCaches (false);
@@ -137,8 +136,7 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
       connection.setDoOutput(true);
 
       //Enviar Peticion
-      DataOutputStream wr = new DataOutputStream (
-                  connection.getOutputStream ());
+      DataOutputStream wr = new DataOutputStream (  connection.getOutputStream ());
       wr.writeBytes (urlParameters);
       wr.flush ();
       wr.close ();
