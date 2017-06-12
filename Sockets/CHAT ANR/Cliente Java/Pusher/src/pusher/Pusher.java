@@ -24,6 +24,7 @@ import javax.swing.text.html.HTMLEditorKit;
 
 public class Pusher implements ChannelEventListener, ConnectionEventListener{
     
+    public String canalSelecionado="" ;
     private final String app_key = "62bdb1641a627e57b225";
     private final String canal = "chat";
     private final String evento = "mensaje";
