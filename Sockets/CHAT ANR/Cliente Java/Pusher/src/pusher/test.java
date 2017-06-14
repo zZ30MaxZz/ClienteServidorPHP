@@ -27,7 +27,7 @@ public class test implements ChannelEventListener, ConnectionEventListener{
     public String canalSelecionado="" ;
     private final String app_key = "62bdb1641a627e57b225";
     private final String canal = "cha";
-    private final String evento = "mensaj";
+    private final String evento = "mensaje";
     private final String host = "http://taimach.munijuanespinozamedrano.gob.pe/server.php";
     
     private final com.pusher.client.Pusher aki;
