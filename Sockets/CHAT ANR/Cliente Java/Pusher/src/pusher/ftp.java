@@ -1,4 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package pusher;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,25 +15,17 @@ import java.io.OutputStreamWriter;
 import java.net.MalformedURLException;
 import java.net.Socket;
 import java.util.StringTokenizer;
-import javax.swing.JOptionPane;
+
+
+
 /**
- *@author Leyer 
+ *
+ * @author mario
  */
-public class test {
- /**
-  * Sube un archivo a un servidor FTP
-  * 
-  * @param ftpServer Servidor FTP
-  * @param user      Usuario
-  * @param password  Contraseña
-  * @param location  Directorio donde se subira el archivo
-  * @param file      Archivo que se va a subir
-  * @param debug     Para Mostrar las respuestas del servidor
-  * 
-  */
-  
- public static void uploadFileToFTP(String ftpServer,String user,String password,String location,File file, boolean debug     ){
-  try {
+public class ftp  {
+    public void ruta(String ftpServer,String user,String password,String location,File file, boolean debug    ){
+        
+    try {
   if(file.exists()){
    Socket socket=new Socket(ftpServer,21);
    BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -104,9 +102,10 @@ public class test {
   } catch (IOException e) {
    e.printStackTrace();
   }
- }
- public static void main(String[] args) {
+        
+    }
+    
+
   
-  uploadFileToFTP("ftp.munijuanespinozamedrano.gob.pe","taimach@taimach.com","mario125","/", new File("C:\\Users\\mario\\Desktop\\sixto.rar"),true);
- }
+    
 }

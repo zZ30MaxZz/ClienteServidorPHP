@@ -28,6 +28,7 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
     private final String app_key = "62bdb1641a627e57b225";
     private final String canal = "chat";
     private final String evento = "mensaje";
+    public String usuario_original;
     private final String host = "http://taimach.munijuanespinozamedrano.gob.pe/server.php";
     
     private final com.pusher.client.Pusher pusher;
@@ -42,6 +43,9 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
         pusher = new com.pusher.client.Pusher(app_key, options);
         pusher.connect(this);
         pusher.subscribe(canal, this,evento );
+    }
+    public void usuario(String usuario){
+        usuario_original=usuario;
     }
     
     @Override
@@ -71,13 +75,24 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
     //Funcion que se activa cuando llega un mensaje del servidor, es decir cuando alguien envia un mensaje
     @Override
     public void onEvent(String channelName, String eventName, String data) {
+       
          System.out.println(String.format(
                 "[%d] Received event [%s] on channel [%s] with data [%s]",
                 timestamp(), eventName, channelName, data));
+         
          //Se decodifica el JSON en la clase Mensaje y agrega al panel para poder verlo
+         
          Gson datos = new Gson();
          Mensaje mensaje =  datos.fromJson(data, Mensaje.class);
-         mensajes = "<p><b>"+mensaje.usuario+": </b><br>"+mensaje.mensaje+"<hr noshade>";
+          if(mensaje.usuario == null ? usuario_original == null : mensaje.usuario.equals(usuario_original))
+          {
+               mensajes = "<div style='  background:#8c1820;color: white;'><p><b>"+mensaje.usuario+": </b><br>"+mensaje.mensaje+"</div> <br>";
+          }
+          else{
+               mensajes = "<div style='background:  #03a9f4;  color: white;'><p><b>"+mensaje.usuario+": </b><br>"+mensaje.mensaje+"</div> <br>";
+          }
+        
+        
          append(mensajes);    
     }
     
@@ -88,6 +103,7 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
             StringReader reader = new StringReader(s);
             kit.read(reader, panel.getDocument(), panel.getDocument().getLength());
             panel.setCaretPosition(panel.getDocument().getLength());
+            
         } catch (IOException ex) {
             ex.printStackTrace();
         } catch (BadLocationException ex) {
@@ -107,8 +123,8 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
                     "&evento=" + URLEncoder.encode(evento, "UTF-8");
             
             String res = Pusher.excutePost(host, params);
+            
         }catch(Exception e){
-            e.printStackTrace();
         }
     }
     
@@ -129,8 +145,7 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
       connection.setRequestProperty("Content-Type", 
            "application/x-www-form-urlencoded");
 			
-      connection.setRequestProperty("Content-Length", "" + 
-               Integer.toString(urlParameters.getBytes().length));
+      connection.setRequestProperty("Content-Length", "" +  Integer.toString(urlParameters.getBytes().length));
       connection.setRequestProperty("Content-Language", "en-US");  
 			
       connection.setUseCaches (false);
@@ -138,8 +153,7 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
       connection.setDoOutput(true);
 
       //Enviar Peticion
-      DataOutputStream wr = new DataOutputStream (
-                  connection.getOutputStream ());
+      DataOutputStream wr = new DataOutputStream (   connection.getOutputStream ());
       wr.writeBytes (urlParameters);
       wr.flush ();
       wr.close ();
@@ -148,6 +162,7 @@ public class Pusher implements ChannelEventListener, ConnectionEventListener{
       InputStream is = connection.getInputStream();
       BufferedReader rd = new BufferedReader(new InputStreamReader(is));
       String line;
+      
       StringBuffer response = new StringBuffer(); 
       while((line = rd.readLine()) != null) {
         response.append(line);
