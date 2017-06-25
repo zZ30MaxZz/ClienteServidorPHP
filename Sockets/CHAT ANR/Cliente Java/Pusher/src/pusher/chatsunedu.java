@@ -38,7 +38,7 @@ public class chatsunedu extends javax.swing.JFrame {
         canal=can;
         evento=even;
         this.setTitle("<<°°|"+nombre+"|°°>>");
-         setIconImage(new ImageIcon(getClass().getResource("../img/1497601892_social-56.png")).getImage());
+         //setIconImage(new ImageIcon(getClass().getResource("../img/1497601892_social-56.png")).getImage());
         initComponents();
         pusher = new Pusher(jEditorPane1,canal,evento);
         pusher.usuario(usuario);
