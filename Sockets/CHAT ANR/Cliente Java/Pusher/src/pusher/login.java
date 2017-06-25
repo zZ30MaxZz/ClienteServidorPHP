@@ -21,7 +21,6 @@ public class login extends javax.swing.JFrame {
      * Creates new form login
      */
     public login() {
-        setIconImage(new ImageIcon(getClass().getResource("../img/1497601892_social-56.png")).getImage());
         initComponents();
     }
 
@@ -38,12 +37,10 @@ public class login extends javax.swing.JFrame {
         tabbedSelector23 = new org.edisoncor.gui.tabbedPane.TabbedSelector2();
         panel1 = new org.edisoncor.gui.panel.Panel();
         jButton2 = new javax.swing.JButton();
-        txtavento = new javax.swing.JTextField();
         txtcanal = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         panel2 = new org.edisoncor.gui.panel.Panel();
         jButton11 = new javax.swing.JButton();
@@ -71,7 +68,7 @@ public class login extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setForeground(new java.awt.Color(0, 102, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/PLUS.png"))); // NOI18N
-        jButton2.setText("CREAR");
+        jButton2.setText("Entrar");
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -89,9 +86,6 @@ public class login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Yu Gothic Light", 0, 14)); // NOI18N
         jLabel5.setText("CANAL:");
 
-        jLabel6.setFont(new java.awt.Font("Yu Gothic Light", 0, 14)); // NOI18N
-        jLabel6.setText("EVENTO:");
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1497602219_InterfaceExpendet-10.png"))); // NOI18N
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
@@ -104,11 +98,9 @@ public class login extends javax.swing.JFrame {
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtavento)
                             .addComponent(txtcanal)
                             .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 18, Short.MAX_VALUE))
@@ -130,11 +122,7 @@ public class login extends javax.swing.JFrame {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcanal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtavento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
@@ -252,9 +240,9 @@ public class login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        nombre=txtnombre.getText();
-        canal=txtcanal.getText();
-        evento=txtcanal.getText();
+        nombre=txtnombre.getText().toLowerCase();
+        canal=txtcanal.getText().toLowerCase();
+        evento = canal;
         if(" ".equals(nombre)||"".equals(canal)||"".equals(evento))
         {
             JOptionPane.showMessageDialog(null, "FALTAN DATOS");
@@ -383,19 +371,9 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private org.edisoncor.gui.panel.Panel panel1;
     private org.edisoncor.gui.panel.Panel panel2;
-    private org.edisoncor.gui.varios.PanelDeslizante panelDeslizante1;
-    private org.edisoncor.gui.varios.PanelDeslizante panelDeslizante2;
-    private org.edisoncor.gui.varios.PanelDeslizante panelDeslizante3;
-    private org.edisoncor.gui.varios.PanelDeslizante panelDeslizante4;
-    private org.edisoncor.gui.panel.PanelRoundTranslucido panelRoundTranslucido1;
-    private org.edisoncor.gui.panel.PanelRoundTranslucido panelRoundTranslucido2;
-    private org.edisoncor.gui.tabbedPane.TabbedSelector2 tabbedSelector21;
-    private org.edisoncor.gui.tabbedPane.TabbedSelector2 tabbedSelector22;
     private org.edisoncor.gui.tabbedPane.TabbedSelector2 tabbedSelector23;
-    private javax.swing.JTextField txtavento;
     private javax.swing.JTextField txtcanal;
     private javax.swing.JTextField txtnombre;
     private org.edisoncor.gui.util.WindowsUtil windowsUtil1;
